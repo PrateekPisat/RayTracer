@@ -1,0 +1,19 @@
+<scene>
+    <instance name="hat" path="models/ObjectOfRevolution"></instance>
+<group name="Hat">
+    <transform>
+        <set>
+            <rotate>180 0 0 1</rotate>
+            <translate>-90 -25 -60</translate>
+        </set>
+        <object instanceof="hat">
+            <material>
+                <ambient>0 0.5 0.5</ambient>
+                <diffuse>1 0 0</diffuse>
+                <specular>1 0 0</specular>
+                <shininess>100</shininess>
+            </material>
+        </object>
+    </transform>
+</group>
+</scene>

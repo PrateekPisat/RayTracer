@@ -1,0 +1,72 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+	<instance name="cylinder" path="models/cylinder"></instance>
+	<instance name="sphere" path="models/sphere"></instance>
+	<instance name="cone" path="models/cone"></instance>
+    <tabletop>
+	<transform>
+        <set>
+            <translate>100 10 -50</translate>>
+            <scale>33 2 33</scale>
+        </set>
+        <object instanceof="box">
+            <material>
+                <color>0.5 0.5 0</color>
+            </material>
+        </object>
+    </transform>
+	</tabletop>
+	<leg1>
+	<transform>
+        <set>
+            <translate>90 0 -40</translate>>
+            <scale>3 11 4</scale>
+        </set>
+        <object instanceof="cylinder">
+            <material>
+                <color>1 1 1</color>
+            </material>
+        </object>
+    </transform>
+	</leg1>
+	<leg2>
+	<transform>
+        <set>
+            <translate>110 0 -40</translate>>
+            <scale>3 11 4</scale>
+        </set>
+        <object instanceof="cylinder">
+            <material>
+                <color>1 1 1</color>
+            </material>
+        </object>
+    </transform>
+	</leg2>
+	<leg3>
+	<transform>
+        <set>
+            <translate>90 0 -50</translate>>
+            <scale>3 11 4</scale>
+        </set>
+        <object instanceof="cylinder">
+            <material>
+                <color>1 1 1</color>
+            </material>
+        </object>
+    </transform>
+	</leg3>
+	<leg4>
+	<transform>
+        <set>
+            <translate>110 0 -50</translate>>
+            <scale>3 11 4</scale>
+        </set>
+        <object instanceof="cylinder">
+            <material>
+                <color>1 1 1</color>
+            </material>
+        </object>
+    </transform>
+	</leg4>
+
+</scene>

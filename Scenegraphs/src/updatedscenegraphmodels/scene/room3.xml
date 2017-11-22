@@ -1,0 +1,131 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+    <light>
+        <light-ambient>0.8 0.8 0.8</light-ambient>
+        <light-diffuse>0.3 0.3 0.3</light-diffuse>
+        <light-specular>0.5 0.5 0.5</light-specular>
+        <light-spotangle>-90</light-spotangle>
+        <light-soptdirection>0 -180 0</light-soptdirection>
+    </light>
+    <group name="floor">
+        <transform>
+            <set>
+                <translate>0 0 -150</translate>>
+                <scale>100 2 120</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <!--<color>0.5 0.5 0.5</color>-->
+                    <ambient>0.5 0.5 0.5</ambient>
+                    <diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0.5 0.5 0.5</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+    </group>
+    <group name="RightWall">
+        <transform>
+            <set>
+                <translate>50 30 -150</translate>>
+                <scale>2 75 100</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <!--<color>1 0 0</color>-->
+                    <ambient>1 0 0</ambient>
+                    <diffuse>1 0 0</diffuse>
+                    <specular>1 0 0</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+    </group>
+    <group name="LeftWall">
+        <transform>
+            <set>
+                <translate>-50 30 -150</translate>>
+                <scale>2 75 100</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <!--<color>1 0 0</color>-->
+                    <ambient>1 0 0</ambient>
+                    <diffuse>1 0 0 </diffuse>
+                    <specular>1 0 0</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+    </group>
+    <group name="BackWall">
+        <transform>
+            <set>
+                <translate>0 30 -200</translate>>
+                <scale>100 75 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <!--<color>1 0 0</color>-->
+                    <ambient>1 0 0</ambient>
+                    <diffuse>1 0 0 </diffuse>
+                    <specular>1 0 0</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+    </group>
+    <group name="frontwall">
+        <part1>
+            <transform>
+                <set>
+                    <translate>0 55 -100</translate>
+                    <scale>100 25 2</scale>
+                </set>
+                <object instanceof="box">
+                    <material>
+                        <!--<color>1 1 1</color>-->
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+        </part1>
+        <part2>
+            <transform>
+                <set>
+                    <translate>-20 15 -100</translate>
+                    <scale>80 35 2</scale>
+                </set>
+                <object instanceof="box">
+                    <material>
+                        <!--<color>1 1 1</color>-->
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+        </part2>>
+        <part3>
+            <transform>
+                <set>
+                    <translate>-5 45 -100</translate>
+                    <scale>50 25 2</scale>
+                </set>
+                <object instanceof="box">
+                    <material>
+                        <!--<color>1 1 1</color>-->
+                        <ambient>1 1 1</ambient>
+                        <diffuse>1 1 1</diffuse>
+                        <specular>1 1 1</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+        </part3>>
+    </group>
+</scene>

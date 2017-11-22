@@ -1,0 +1,47 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+	<instance name="cylinder" path="models/cylinder"></instance>
+	<instance name="sphere" path="models/sphere"></instance>
+	<instance name="cone" path="models/cone"></instance>
+	<dumbbell>
+		<center>
+			<transform>
+				<set>
+					<scale>4 3 1</scale>
+					<translate>27 6 -35</translate>>
+				</set>
+				<object instanceof="cylinder">
+                    <material>
+                        <!--<color>1 1 1</color>-->
+                    </material>
+                </object>
+			</transform>
+		</center>
+		<wight1>
+            <transform>
+                <set>
+                    <translate>104 20 -35</translate>>
+                    <scale>2.5 2.5 2.5</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <color>0 1 0</color>
+                    </material>
+                </object>
+            </transform>
+		</wight1>
+		<wight2>
+            <transform>
+                <set>
+                    <translate>112 20 -35</translate>>
+                    <scale>2.5 2.5 2.5</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <color>0 1 0</color>
+                    </material>
+                </object>
+            </transform>
+		</wight2>
+	</dumbbell>
+</scene>

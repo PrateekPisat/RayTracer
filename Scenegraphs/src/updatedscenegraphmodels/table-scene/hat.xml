@@ -1,0 +1,14 @@
+<scene>
+    <instance name="hat" path="models/ObjectOfRevolution"></instance>
+    <transform>
+        <set>
+            <rotate>180 0 0 1</rotate>
+            <translate>-90 -25 -60</translate>
+        </set>
+        <object instanceof="hat">
+            <material>
+                <color>0 0.5 0.5</color>
+            </material>
+        </object>
+    </transform>
+</scene>

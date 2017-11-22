@@ -1,0 +1,45 @@
+<scene>
+    <transform>
+    <set>
+        <translate>0 0 100</translate>
+    </set>
+    <group name="YMCA">
+        <group name="Y">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="Y" from="scenegraphmodels/YMCA/Y-humanoid.xml">
+            </group>
+        </transform>
+        </group>
+        <group name="M">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="M" from="scenegraphmodels/YMCA/M-humanoid.xml">
+            </group>
+        </transform>
+        </group>
+        <group name="C">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="C" from="scenegraphmodels/YMCA/C-humanoid.xml">
+            </group>
+        </transform>
+        </group>
+        <group name="A">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="A" from="scenegraphmodels/YMCA/A-humanoid.xml">
+            </group>
+        </transform>
+        </group>
+    </group>
+    </transform>
+</scene>

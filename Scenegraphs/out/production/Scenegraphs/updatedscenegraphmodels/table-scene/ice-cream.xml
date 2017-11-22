@@ -1,0 +1,36 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+	<instance name="cylinder" path="models/cylinder"></instance>
+	<instance name="sphere" path="models/sphere"></instance>
+	<instance name="cone" path="models/cone"></instance>
+	<ice-cream>
+        <ice-cream-scoop>
+            <transform>
+                <set>
+                    <translate>110 25 -50</translate>>
+                    <scale>2.5 2.5 2.5</scale>
+                </set>
+                <object instanceof="sphere">
+                    <material>
+                        <color>0 1 1</color>
+                    </material>
+                </object>
+            </transform>
+        </ice-cream-scoop>
+        <cone>
+            <transform>
+                <set>
+                    <translate>110 20 -50</translate>>
+                    <scale>2 11 2.5</scale>
+                    <rotate>180 0 1 0</rotate>
+                    <rotate>180 1 0 0</rotate>
+                </set>
+                <object instanceof="cone">
+                    <material>
+                        <color>1 1 1</color>
+                    </material>
+                </object>
+            </transform>
+        </cone>
+    </ice-cream>>
+</scene>

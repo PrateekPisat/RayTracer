@@ -1,0 +1,171 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+	<light>
+		<light-ambient>0.8 0.8 0.8</light-ambient>
+		<light-diffuse>0.3 0.3 0.3</light-diffuse>
+		<light-specular>0.5 0.5 0.5</light-specular>
+		<light-position>0 20 0</light-position>
+	</light>
+	<group name="LeftWall">
+		<transform>
+			<set>
+				<translate>-150 30 -50</translate>>
+				<scale>2 75 120</scale>
+			</set>
+			<object instanceof="box">
+				<material>
+					<!--<color>1 0 0</color>-->
+					<ambient>1 0 0</ambient>
+					<diffuse>1 0 0 </diffuse>
+					<specular>1 0 0</specular>
+					<shininess>1 1 1</shininess>
+				</material>
+			</object>
+		</transform>
+	</group>
+	<group name="BackWall">
+		<transform>
+			<set>
+				<translate>-100 30 -100</translate>>
+				<scale>100 75 2</scale>
+			</set>
+			<object instanceof="box">
+				<material>
+					<!--<color>1 0 0</color>-->
+					<ambient>1 0 0</ambient>
+					<diffuse>1 0 0 </diffuse>
+					<specular>1 0 0</specular>
+					<shininess>100</shininess>
+				</material>
+			</object>
+		</transform>
+	</group>
+	<group name="Floor">
+		<transform>
+			<set>
+				<translate>-100 0 -50</translate>>
+				<scale>100 2 120</scale>
+			</set>
+			<object instanceof="box">
+				<material>
+					<!--<color>0.5 0.5 0.5</color>-->
+					<ambient>0.5 0.5 0.5</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+					<specular>0.5 0.5 0.5</specular>
+					<shininess>100</shininess>
+				</material>
+			</object>
+		</transform>
+	</group>
+	<group name="Rightwall">
+		<part1>
+			<transform>
+				<set>
+					<translate>-50 55 -50</translate>
+					<scale>2 25 120</scale>
+				</set>
+				<object instanceof="box">
+					<material>
+						<!--<color>1 1 1</color>-->
+						<ambient>1 1 1</ambient>
+						<diffuse>1 1 1</diffuse>
+						<specular>1 1 1</specular>
+						<shininess>1 1 1</shininess>
+					</material>
+				</object>
+			</transform>
+		</part1>
+		<part2>
+			<transform>
+				<set>
+					<translate>-50 25 -15</translate>
+					<scale>2 50 50</scale>>
+				</set>
+				<object instanceof="box">
+					<material>
+						<!--<color>1 1 1</color>-->
+						<ambient>1 1 1</ambient>
+						<diffuse>1 1 1</diffuse>
+						<specular>1 1 1</specular>
+						<shininess>1 1 1</shininess>
+					</material>
+				</object>
+			</transform>>
+		</part2>
+		<part3>
+			<transform>
+				<set>
+					<translate>-50 25 -85</translate>
+					<scale>2 50 50</scale>>
+				</set>
+				<object instanceof="box">
+					<material>
+						<!--<color>1 1 1</color>-->
+						<ambient>1 1 1</ambient>
+						<diffuse>1 1 1</diffuse>
+						<specular>1 1 1</specular>
+						<shininess>1 1 1</shininess>
+					</material>
+				</object>
+			</transform>>
+		</part3>>
+	</group>
+	<group name="FrontWall">
+		<transform>
+			<set>
+				<translate>-100 5 10</translate>
+				<scale>100 25 2</scale>>
+			</set>
+			<object instanceof="box">
+				<material>
+					<!--<color>1 0 1</color>-->
+					<ambient>1 0 1</ambient>
+					<diffuse>1 0 1</diffuse>
+					<specular>1 0 1</specular>
+					<shininess>100</shininess>
+				</material>
+			</object>
+		</transform>>
+		<transform>
+			<set>
+				<translate>-100 60 10</translate>
+				<scale>100 25 2</scale>>
+			</set>
+			<object instanceof="box">
+				<material>
+					<color>1 0 1</color>
+				</material>
+			</object>
+		</transform>>
+		<transform>
+			<set>
+				<translate>-130 30 10</translate>
+				<scale>40 75 2</scale>>
+			</set>
+			<object instanceof="box">
+				<material>
+					<!--<color>1 0 1</color>-->
+					<ambient>1 0 1</ambient>
+					<diffuse>1 0 1</diffuse>
+					<specular>1 0 1</specular>
+					<shininess>100</shininess>
+				</material>
+			</object>
+		</transform>>
+		<transform>
+			<set>
+				<translate>-70 30 10</translate>
+				<scale>40 75 2</scale>>
+			</set>
+			<object instanceof="box">
+				<material>
+					<!--<color>1 0 1</color>-->
+					<ambient>1 0 1</ambient>
+					<diffuse>1 0 1</diffuse>
+					<specular>1 0 1</specular>
+					<shininess>100</shininess>
+				</material>
+			</object>
+		</transform>>
+	</group>
+</scene>

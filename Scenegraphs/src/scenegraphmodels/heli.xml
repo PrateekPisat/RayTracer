@@ -1,0 +1,205 @@
+<scene>
+	<instance name="box" path="models/box-outside"></instance>
+	<instance name="cylinder" path="models/cylinder"></instance>
+	<instance name="sphere" path="models/sphere"></instance>
+	<instance name="cone" path="models/cone"></instance>
+	<image name="earth" path="textures/earthmap.jpg"/>
+	<image name="checkerboard" path="textures/checkerboard-box.png"/>
+	<image name="white" path="textures/white.png"/>
+	<image name="white-box" path="textures/whitebox.png"/>
+	<image name="die" path="textures/die.png"/>
+	<light>
+        <ambient>1 1 1</ambient>
+        <diffuse>0.5 0.5 0.5</diffuse>
+        <specular>0.5 0.5 0.5</specular>
+		<position>0 0 100</position>
+	</light>
+	<transform name="helicop">
+		<set>
+			<translate>-50 0 40</translate>
+		</set>
+	<group name="heli">
+		<group name="body">
+		<transform name="body-transform">
+			<set>
+				<scale> 36 36 36</scale>
+			</set>
+			<object instanceof="box" texture="die">
+				<material>
+                    <ambient>1 0 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		</group>
+		<group name="tail">
+		<transform name="tail-transform">
+			<set>
+				<scale>72 18 2</scale>
+				<translate>0.75 0 0</translate>
+			</set>
+			<object instanceof="box" texture="white-box">
+				<material>
+					<ambient>1 0 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		</group>
+		<group name="wheels">
+			<transform name="wheel-transform1">
+				<set>
+				<scale>10 2 10</scale>
+				<rotate>90 1 0 0</rotate>
+				<translate>0 2 8</translate>
+					
+				</set>
+				<object instanceof="cylinder" texture="white">
+					<material>
+						<ambient> 1 1 0</ambient>
+						<diffuse>0.5 0.5 0.5</diffuse>
+                        <specular>0 0 0</specular>>
+						<shininess>10</shininess>
+					</material>
+				</object>
+			</transform>
+		<transform name="wheel-transform2">
+			<set>
+				<scale>10 2 10</scale>
+				<rotate>90 1 0 0</rotate>
+				<translate>0 -2 8</translate>
+			</set>
+			<object instanceof="cylinder" texture="white">
+				<material>
+					<ambient> 1 1 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		</group>
+	<group name="prop">
+	<transform name="prop">
+		<set>
+		<translate>0 0.5 0</translate>
+		</set>
+		<group>
+		<transform name="wing1">
+			<set>
+				<scale>54 2 5</scale>
+				<translate>0 15 0</translate>
+			</set>
+			<object instanceof="box" texture="white-box">
+				<material>
+					<ambient>1 1 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		<transform name="wing2">
+			<set>
+				<rotate>90 0 1 0</rotate>
+				<scale>54 2 5</scale>
+				<translate>0 15 0</translate>
+			</set>
+			<object instanceof="box" texture="white-box">
+				<material>
+					<ambient>1 1 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		<transform name="prop-base">
+			<set>
+				<scale>5 10 10</scale>
+				<translate>0 2 0</translate>
+			</set>
+
+			<object instanceof="cylinder" texture="white">
+				<material>
+					<ambient>1 1 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+            <transform name="prop-top">
+                <set>
+                    <translate>0 4 0</translate>
+                </set>
+                <object instanceof="cone" texture="white">
+                    <material>
+                        <ambient>1 0 1</ambient>
+						<diffuse>0.5 0.5 0.5</diffuse>
+                        <specular>0.9 0.9 0.9</specular>
+                        <shininess>50</shininess>
+                    </material>
+                </object>
+            </transform>
+		</group>
+	</transform>
+	</group>
+	<transform name="tail-prop">
+	<set>
+		<rotate>90 1 0 0</rotate>
+		<translate>90 0 0</translate>
+	</set>
+	<group name="tail-propeller">
+		<transform name="tail-wing1">
+			<set>
+				<scale>18 2 2</scale>
+				<translate>0 2 0</translate>
+			</set>
+			<object instanceof="box" texture="white-box">
+				<material>
+					<ambient>1 0 1</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		<transform name="tail-wing2">
+			<set>
+				<rotate>90 0 1 0</rotate>
+				<scale>18 2 2</scale>	
+				<translate>0 2 0</translate>
+			</set>
+			<object instanceof="box" texture="white-box">
+				<material>
+					<ambient>1 0 1</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		<transform name="tail-base">
+			<set>
+				<scale>2.5 5 5</scale>
+				<translate>0 0 0</translate>
+			</set>
+			<object instanceof="cylinder" texture="white">
+				<material>
+					<ambient>1 1 0</ambient>
+					<diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>0 0 0</specular>>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+	</group>
+	</transform>
+	</group>
+	</transform>
+</scene>

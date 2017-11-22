@@ -1,0 +1,207 @@
+<scene>
+    <instance name="box" path="models/box-outside"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="cone" path="models/cone"></instance>
+    <instance name="hat" path="models/ObjectOfRevolution"></instance>
+    <image name="earth" path="textures/earthmap.jpg"/>
+    <image name="checkerboard" path="textures/checkerboard-box.png"/>
+    <image name="white" path="textures/white.png"/>
+    <image name="white-box" path="textures/whitebox.png"/>
+       <light>
+        <ambient>1 1 1</ambient>
+        <diffuse>0.5 0.5 0.5</diffuse>
+        <specular>0.5 0.5 0.5</specular>
+        <position>80 50 60</position>
+    </light>
+    <transform>
+        <set>
+            <translate>0 0 0</translate>
+        </set>>
+    <group name="table scene">
+        <group name="table">
+            <tabletop>
+                <transform>
+                    <set>
+                        <translate>100 10 -50</translate>>
+                        <scale>33 2 33</scale>
+                    </set>
+                    <object instanceof="box" texture = "white-box">
+                        <material>
+                            <ambient>0.5 0.5 0</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </tabletop>
+            <leg1>
+                <transform>
+                    <set>
+                        <translate>90 0 -40</translate>>
+                        <scale>3 11 4</scale>
+                    </set>
+                    <object instanceof="cylinder" texture="white">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </leg1>
+            <leg2>
+                <transform>
+                    <set>
+                        <translate>110 0 -40</translate>>
+                        <scale>3 11 4</scale>
+                    </set>
+                    <object instanceof="cylinder" texture="white">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </leg2>
+            <leg3>
+                <transform>
+                    <set>
+                        <translate>90 0 -50</translate>>
+                        <scale>3 11 4</scale>
+                    </set>
+                    <object instanceof="cylinder" texture="white">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </leg3>
+            <leg4>
+                <transform>
+                    <set>
+                        <translate>110 0 -50</translate>>
+                        <scale>3 11 4</scale>
+                    </set>
+                    <object instanceof="cylinder" texture="white">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </leg4>
+        </group>
+        <group name="ice-cream">
+            <ice-cream-scoop>
+                <transform>
+                    <set>
+                        <translate>110 25 -50</translate>>
+                        <scale>2.5 2.5 2.5</scale>
+                    </set>
+                    <object instanceof="sphere" texture="earth">
+                        <material>
+                            <ambient>0 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </ice-cream-scoop>
+            <cone>
+                <transform>
+                    <set>
+                        <translate>110 20 -50</translate>>
+                        <scale>2 11 2.5</scale>
+                        <rotate>180 0 1 0</rotate>
+                        <rotate>180 1 0 0</rotate>
+                    </set>
+                    <object instanceof="cone" texture="white">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </cone>
+        </group>
+        <group name=" dumbbell">
+            <center>
+                <transform>
+                    <set>
+                        <scale>4 3 1</scale>
+                        <translate>27 6 -35</translate>>
+                    </set>
+                    <object instanceof="cylinder" texture="white">
+                        <material>
+                            <ambient>1 1 1</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </center>
+            <wight1>
+                <transform>
+                    <set>
+                        <translate>104 20 -35</translate>>
+                        <scale>2.5 2.5 2.5</scale>
+                    </set>
+                    <object instanceof="sphere" texture="earth">
+                        <material>
+                            <ambient>0 1 0</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </wight1>
+            <wight2>
+                <transform>
+                    <set>
+                        <translate>112 20 -35</translate>>
+                        <scale>2.5 2.5 2.5</scale>
+                    </set>
+                    <object instanceof="sphere" texture="earth">
+                        <material>
+                            <ambient>0 1 0</ambient>
+                            <diffuse>0.5 0.5 0.5</diffuse>
+                            <specular>1 0 0</specular>
+                            <shininess>100</shininess>
+                        </material>
+                    </object>
+                </transform>
+            </wight2>
+        </group>
+        <group name="Hat">
+            <transform>
+                <set>
+                    <translate>110 30 -35</translate>
+                </set>
+                <object instanceof="hat" texture="white">
+                    <material>
+                        <ambient>0 0.5 0.5</ambient>
+                        <diffuse>0.5 0.5 0.5</diffuse>
+                        <specular>1 0 0</specular>
+                        <shininess>100</shininess>
+                    </material>
+                </object>
+            </transform>
+        </group>
+    </group>
+    </transform>
+</scene>

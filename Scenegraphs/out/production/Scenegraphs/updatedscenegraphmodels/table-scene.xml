@@ -1,0 +1,44 @@
+<scene>
+    <transform>
+        <set>
+            <translate>0 0 100</translate>
+        </set>>
+    <group name="table scene">
+    <group name="Dumbell">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="Dumbbell" from="updatedscenegraphmodels/table-scene/dumberll.xml">
+            </group>
+        </transform>
+    </group>
+        <group name="hat">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="hat" from="updatedscenegraphmodels/table-scene/hat.xml">
+            </group>
+        </transform>
+        </group>
+        <group name="ice-cream">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="ice-cream" from="updatedscenegraphmodels/table-scene/ice-cream.xml">
+            </group>
+        </transform>
+        </group>
+        <group name="table">
+        <transform>
+            <set>
+                <translate>0 0 0</translate>
+            </set>
+            <group name="table" from="updatedscenegraphmodels/table-scene/table.xml"></group>
+        </transform>
+        </group>
+    </group>
+    </transform>
+</scene>
