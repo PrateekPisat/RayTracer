@@ -3,10 +3,7 @@ package sgraph;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
-import util.IVertexData;
-import util.Light;
-import util.PolygonMesh;
-import util.Ray;
+import util.*;
 
 import java.util.*;
 
@@ -205,19 +202,21 @@ public class TransformNode extends AbstractNode
     @Override
     public ArrayList<Light> getLights(Stack<Matrix4f> modelView) {
         ArrayList<Light> ll = new ArrayList<Light>();
+        modelView.push(new Matrix4f(modelView.peek()));
+        modelView.peek().mul(transform);
         for(int i = 0; i < lights.size(); i++) {
             Light l = lights.get(i);
-            l.setPosition(l.getPosition().mul(modelView.peek()).mul(transform));
+            l.setPosition(l.getPosition().mul(transform));
             ll.add(l);
         }
         ArrayList<Light> cll = new ArrayList<Light>();
                 cll.addAll(child.getLights(modelView));
         for(int j = 0; j < cll.size(); j++) {
             Light l = cll.get(j);
-            l.setPosition(l.getPosition().mul(modelView.peek().mul(modelView.peek()).mul(transform)));
+            l.setPosition(l.getPosition());
             ll.add(l);
         }
-
+        modelView.pop();
         return ll;
     }
 
@@ -340,23 +339,14 @@ public class TransformNode extends AbstractNode
         return  blank;
     }
 
-    public int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
+    public Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> ls)
     {
-        int color=0;
-        for(int i=0;i<lights.size();i++)
-        {
-            if(!ls.contains(lights.get(i)))
-                ls.add(lights.get(i));
-        }
-//        for(int i=0;i<ls.size();i++)
-//        {
-//            ls.get(i).setPosition(ls.get(i).getPosition().mul(transform));
-//        }
+        int color;
+        Point p1;
         modelview.push(new Matrix4f(modelview.peek()));
         modelview.peek().mul(transform);
-        if(child!=null)
-            color = child.rayCast(r1,modelview, ls);
+            p1 = child.rayCast(r1,modelview, ls);
         modelview.pop();
-        return color;
+        return p1;
     }
 }

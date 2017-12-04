@@ -1,7 +1,6 @@
 <scene>
     <instance name="Box" path="models/box-outside"></instance>
-   <instance name="Cylinder" path="models/cylinder"></instance>
-   <instance name="Sphere" path="models/sphere"></instance>
+    <instance name="Sphere" path="models/sphere"></instance>
     <image name="earth"  path="textures/earthmap.jpg" />
     <image name="checker"  path="textures/checkerboard.png" />
     <image name="checker-box"  path="textures/checkerboard-box.png" />
@@ -17,15 +16,34 @@
     <group>
         <transform>
             <set>
-                <scale>1 1 1</scale>
+                <translate>0 -1.25 -9</translate>
+                <scale>2 2 2</scale>
             </set>
-            <object instanceof="Cylinder" texture="white">
+            <object instanceof="Sphere" texture="white">
                 <material>
                     <ambient>1 0 1</ambient>
                     <diffuse>0.9 0.9 0.9</diffuse>
                     <specular>1 1 1</specular>
                     <absorption>1</absorption>
                     <reflection>0</reflection>
+                    <shininess>50</shininess>
+                </material>
+            </object>
+        </transform>
+    </group>
+    <group>
+        <transform>
+            <set>
+                <translate>0 -3.25 -6.5</translate>
+                <scale>12 0.25 10.5</scale>
+            </set>
+            <object instanceof="Box" texture="whitebox">
+                <material>
+                    <ambient>1 0 0</ambient>
+                    <diffuse>0.9 0.9 0.9</diffuse>
+                    <specular>1 1 1</specular>
+                    <absorption>0.5</absorption>
+                    <reflection>0.5</reflection>
                     <shininess>50</shininess>
                 </material>
             </object>

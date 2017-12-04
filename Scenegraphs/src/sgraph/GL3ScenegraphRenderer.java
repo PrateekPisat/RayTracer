@@ -165,6 +165,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         GL3 gl = glContext.getGL().getGL3();
 
         numLightsLocation = shaderLocations.getLocation("numLights");
+        System.out.println("Got numLights");
         FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 
         for (int i = 0; i < lights.size(); i++) {
@@ -175,29 +176,22 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             ll.ambient = shaderLocations.getLocation(name + ".ambient");
             ll.diffuse = shaderLocations.getLocation(name + ".diffuse");
             ll.specular = shaderLocations.getLocation(name+ ".specular");
-            if(shaderLocations.getLocation(name+ ".position") == null)
-            {
-                ll.spotangle = shaderLocations.getLocation(name + ".spotAngle");
-                ll.spotdirection = shaderLocations.getLocation(name+".spotDirection");
-            }
-            else
-                ll.position = shaderLocations.getLocation(name+".position");
+            ll.spotangle = shaderLocations.getLocation(name + ".spotAngle");
+            ll.spotdirection = shaderLocations.getLocation(name+".spotDirection");
+            ll.position = shaderLocations.getLocation(name+".position");
             lightLocations.add(ll);
         }
+        System.out.println("Got Locations");
 
         for (int i = 0; i < lights.size(); i++) {
             String name;
             name = "light[" + i + "]";
             Vector4f pos = lights.get(i).getPosition();
-            if (shaderLocations.getLocation(name + ".position") == null)
-            {
+            System.out.println("Got Position");
                 gl.glUniform1f(lightLocations.get(i).spotangle, lights.get(i).getSpotCutoff());
                 gl.glUniform3fv(lightLocations.get(i).spotdirection, 1, lights.get(i).getSpotDirection().get(fb4));
-            }
-            else
-            {
                 gl.glUniform4fv(lightLocations.get(i).position, 1, pos.get(fb4));
-            }
+            System.out.println("End of Loop");
         }
 
         gl.glUniform1i(numLightsLocation, lights.size());
@@ -205,6 +199,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glUniform3fv(lightLocations.get(i).ambient, 1, lights.get(i).getAmbient().get(fb4));
             gl.glUniform3fv(lightLocations.get(i).diffuse, 1, lights.get(i).getDiffuse().get(fb4));
             gl.glUniform3fv(lightLocations.get(i).specular, 1, lights.get(i).getSpecular().get(fb4));
+            System.out.println("End of lights functions");
 
         }
         //program.disable(gl);
@@ -318,6 +313,10 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         }
     }
 
+    public Map<String, TextureImage> getTextures()
+    {
+        return this.textures;
+    }
 
     @Override
     public int getShaderLocation(String name)

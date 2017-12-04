@@ -3,10 +3,7 @@ package sgraph;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
-import util.IVertexData;
-import util.Light;
-import util.PolygonMesh;
-import util.Ray;
+import util.*;
 
 import java.util.*;
 
@@ -173,6 +170,10 @@ public interface INode
      * @param r1
      * @param modelview
      */
-     int rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> lights);
+     Point rayCast(Ray r1, Stack<Matrix4f> modelview, ArrayList<Light> lights);
+
+//     Vector4f getNormal();
+//
+//     Vector4f getPostion();
 }
 

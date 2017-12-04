@@ -14,6 +14,8 @@ struct LightProperties
     vec3 diffuse;
     vec3 specular;
     vec4 position;
+    vec4 spotDirection;
+    float spotAngle;
 };
 
 const int MAXLIGHTS = 10;
@@ -41,10 +43,11 @@ void main()
     vec3 normalView;
     vec3 ambient,diffuse,specular;
     float nDotL,rDotV;
+    float cosphi, cosTheta;
 
     fPosition = modelview * vec4(vPosition.xyzw);
     gl_Position = projection * fPosition;
-
+    int si=1;
 
     vec4 tNormal = normalmatrix * vNormal;
     normalView = normalize(tNormal.xyz);
@@ -54,9 +57,20 @@ void main()
     for (int i=0;i<numLights;i++)
     {
         if (light[i].position.w!=0)
-            lightVec = normalize(light[i].position.xyz - fPosition.xyz);
+            {
+                lightVec = normalize(light[i].position.xyz - fPosition.xyz);
+                si=1;
+            }
         else
-            lightVec = normalize(-light[i].position.xyz);
+            {
+                lightVec = normalize(-light[i].position.xyz);
+                cosphi = dot(normalize(light[i].spotDirection.xyz),-lightVec);
+                cosTheta = cos(light[i].spotAngle);
+                if(cosphi>cosTheta)
+                    si=1;
+                else
+                    si=0;
+            }
 
 
         nDotL = dot(normalView,lightVec);
@@ -78,6 +92,6 @@ void main()
         fColor = fColor + vec4(ambient+diffuse+specular,1.0);
     }
 
-    fTexCoord = texturematrix * vec4(1*vTexCoord.s,1*vTexCoord.t,0,1);
+    fTexCoord =  vec4(1*vTexCoord.s,1*vTexCoord.t,0,1);
 
 }

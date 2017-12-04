@@ -8,6 +8,7 @@ import util.Light;
 import util.ShaderProgram;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -124,6 +125,6 @@ public interface IScenegraph<VertexType extends IVertexData>
     public IScenegraph update(IScenegraph SG_soFar);
 
 
-     List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview) throws Exception;
+     List<Integer> raytrace(int width, int height, Stack<Matrix4f> modelview, ArrayList<Light> ls) throws Exception;
 
 }

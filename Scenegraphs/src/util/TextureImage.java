@@ -41,7 +41,7 @@ public class TextureImage {
     return name;
   }
 
-  Vector4f getColor(float x, float y) {
+  public Vector4f getColor(float x, float y) {
     int x1, y1, x2, y2;
 
     x = x - (int) x; //GL_REPEAT
@@ -62,20 +62,21 @@ public class TextureImage {
     if (y2 >= image.getHeight())
       y2 = image.getHeight() - 1;
 
-    Vector4f one = ColorToVector4f(new Color(image.getRGB(x1, y1)));
-    Vector4f two = ColorToVector4f(new Color(image.getRGB(x2, y1)));
-    Vector4f three = ColorToVector4f(new Color(image.getRGB(x1, y2)));
-    Vector4f four = ColorToVector4f(new Color(image.getRGB(x2, y2)));
+    Vector4f one = ColorToVector4f(new util.Color(image.getRGB(x1, y1)));
+    Vector4f two = ColorToVector4f(new util.Color(image.getRGB(x2, y1)));
+    Vector4f three = ColorToVector4f(new util.Color(image.getRGB(x1, y2)));
+    Vector4f four = ColorToVector4f(new util.Color(image.getRGB(x2, y2)));
 
-    Vector4f inter1 = one.lerp(three, y - y1);
-    Vector4f inter2 = two.lerp(four, y - y1);
-    Vector4f inter3 = inter1.lerp(inter2, x - x1);
+    Vector4f inter1 = one.lerp(three, y - (int)y);
+    Vector4f inter2 = two.lerp(four, y - (int)y);
+    Vector4f inter3 = inter1.lerp(inter2, x - (int)x);
+
 
     return inter3;
   }
 
-  private Vector4f ColorToVector4f(Color c) {
-    return new Vector4f((float) c.getRed() / 255, (float) c.getGreen() / 255, (float) c.getBlue() / 255, (float) c.getAlpha() / 255);
+  private Vector4f ColorToVector4f(util.Color c) {
+    return new Vector4f( c.getRed(),  c.getGreen(),  c.getBlue(), 0);
   }
 
 
